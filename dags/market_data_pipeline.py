@@ -1,24 +1,29 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
-from include.api_ingestion import fetch_data, save_data
+from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
+from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
+from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage
 import os
 
 def ingest_data():
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)
-    # Using an absolute path or a path relative to the AIRFLOW_HOME usually works better, 
-    # but based on the prompt, 'include/temp_data/' is requested.
-    # In Astro/Airflow, 'include' is typically at the root.
     save_data(data, 'include/temp_data/posts.json')
+
+def upload_to_stage():
+    conn_id = 'snowflake_default'
+    hook = SnowflakeHook(snowflake_conn_id=conn_id)
+    conn = hook.get_conn()
+    upload_to_snowflake_stage('include/temp_data/posts.json', conn)
 
 with DAG(
     'market_data_pipeline',
     start_date=datetime(2024, 1, 1),
     schedule='@daily',
     catchup=False,
-    description='A simple DAG to ingest market data from an API',
-    tags=['ingestion', 'api'],
+    description='A simple DAG to ingest market data from an API and load to Snowflake',
+    tags=['ingestion', 'api', 'snowflake'],
 ) as dag:
 
     ingest_task = PythonOperator(
@@ -26,4 +31,15 @@ with DAG(
         python_callable=ingest_data
     )
 
-    ingest_task
+    upload_task = PythonOperator(
+        task_id='upload_to_snowflake',
+        python_callable=upload_to_stage
+    )
+
+    copy_task = SnowflakeOperator(
+        task_id='copy_to_table',
+        snowflake_conn_id='snowflake_default',
+        sql="COPY INTO MY_TABLE FROM @MY_API_STAGE FILE_FORMAT = (TYPE = 'JSON')"
+    )
+
+    ingest_task >> upload_task >> copy_task

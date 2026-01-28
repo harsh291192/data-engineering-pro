@@ -21,6 +21,19 @@ def save_data(data, path):
         json.dump(data, f, indent=4)
     print(f"Data saved to {path}")
 
+
+def upload_to_snowflake_stage(file_path, conn):
+    """
+    Uploads a local file to a Snowflake Internal Stage.
+    """
+    try:
+        cursor = conn.cursor()
+        put_query = f"PUT file://{file_path} @MY_API_STAGE AUTO_COMPRESS=TRUE"
+        cursor.execute(put_query)
+        print(f"File {file_path} uploaded to @MY_API_STAGE")
+    finally:
+        cursor.close()
+
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)
