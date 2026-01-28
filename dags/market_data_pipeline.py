@@ -15,7 +15,7 @@ def ingest_data():
 with DAG(
     'market_data_pipeline',
     start_date=datetime(2024, 1, 1),
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False,
     description='A simple DAG to ingest market data from an API',
     tags=['ingestion', 'api'],
