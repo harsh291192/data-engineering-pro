@@ -4,13 +4,19 @@ from datetime import datetime
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
-from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage, slack_alert, slack_success_alert
+from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage, slack_alert, slack_success_alert, validate_api_response
 import os
+import json
 
 def ingest_data():
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)
     save_data(data, 'include/temp_data/posts.json')
+
+def validate_data():
+    with open('include/temp_data/posts.json', 'r') as f:
+        data = json.load(f)
+    validate_api_response(data)
 
 def upload_to_stage():
     conn_id = 'snowflake_default'
@@ -34,6 +40,11 @@ with DAG(
         python_callable=ingest_data
     )
 
+    validate_task = PythonOperator(
+        task_id='validate_data',
+        python_callable=validate_data
+    )
+
     upload_task = PythonOperator(
         task_id='upload_to_snowflake',
         python_callable=upload_to_stage
@@ -48,4 +59,4 @@ with DAG(
         ]
     )
 
-    ingest_task >> upload_task >> copy_task
+    ingest_task >> validate_task >> upload_task >> copy_task

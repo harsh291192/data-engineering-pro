@@ -64,6 +64,20 @@ def slack_success_alert(context):
     hook = SlackHook(slack_conn_id='slack_conn')
     hook.client.chat_postMessage(channel='#data-alerts', text=message)
 
+from airflow.exceptions import AirflowFailException
+
+def validate_api_response(data):
+    """
+    Validates API response data.
+    """
+    if not data:
+        raise AirflowFailException("API response is empty")
+    
+    if 'id' not in data[0]:
+        raise AirflowFailException("First record missing 'id' key")
+    
+    print("Data validation passed.")
+
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)
