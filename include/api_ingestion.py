@@ -34,6 +34,23 @@ def upload_to_snowflake_stage(file_path, conn):
     finally:
         cursor.close()
 
+from airflow.providers.slack.hooks.slack import SlackHook
+
+def slack_alert(context):
+    """
+    Sends a Slack alert on task failure.
+    """
+    ti = context.get('task_instance')
+    dag_id = ti.dag_id
+    task_id = ti.task_id
+    execution_date = context.get('execution_date')
+    
+    message = f":red_circle: *Task Failed*\n*DAG*: {dag_id}\n*Task*: {task_id}\n*Execution Date*: {execution_date}"
+    
+    hook = SlackHook(slack_conn_id='slack_conn')
+    # Using the client from SlackHook to post message
+    hook.client.chat_postMessage(channel='#data-alerts', text=message)
+
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)

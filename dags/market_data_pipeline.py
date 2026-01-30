@@ -4,7 +4,7 @@ from datetime import datetime
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
-from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage
+from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage, slack_alert
 import os
 
 def ingest_data():
@@ -25,6 +25,7 @@ with DAG(
     catchup=False,
     description='A simple DAG to ingest market data from an API and load to Snowflake',
     tags=['ingestion', 'api', 'snowflake'],
+    on_failure_callback=slack_alert,
 ) as dag:
 
     ingest_task = PythonOperator(

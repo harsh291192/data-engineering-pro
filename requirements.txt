@@ -6,3 +6,4 @@ snowflake-snowpark-python
 google-cloud-storage
 pandas
 apache-airflow-providers-snowflake
+apache-airflow-providers-slack
