@@ -51,6 +51,19 @@ def slack_alert(context):
     # Using the client from SlackHook to post message
     hook.client.chat_postMessage(channel='#data-alerts', text=message)
 
+def slack_success_alert(context):
+    """
+    Sends a Slack alert on DAG success.
+    """
+    ti = context.get('task_instance')
+    dag_id = ti.dag_id
+    execution_date = context.get('execution_date')
+    
+    message = f":white_check_mark: *Pipeline Succeeded*\n*DAG*: {dag_id}\n*Execution Date*: {execution_date}"
+    
+    hook = SlackHook(slack_conn_id='slack_conn')
+    hook.client.chat_postMessage(channel='#data-alerts', text=message)
+
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/posts'
     data = fetch_data(url)
