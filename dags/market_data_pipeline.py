@@ -2,7 +2,8 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
-from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
+from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from include.api_ingestion import fetch_data, save_data, upload_to_snowflake_stage
 import os
 
@@ -36,10 +37,10 @@ with DAG(
         python_callable=upload_to_stage
     )
 
-    copy_task = SnowflakeOperator(
+    copy_task = SQLExecuteQueryOperator(
         task_id='copy_to_table',
-        snowflake_conn_id='snowflake_default',
-        sql="COPY INTO MY_TABLE FROM @MY_API_STAGE FILE_FORMAT = (TYPE = 'JSON')"
+        conn_id='snowflake_default',
+        sql="COPY INTO DE_LEARNING.RAW.RAW_POSTS (json_data) FROM (SELECT $1 FROM @DE_LEARNING.RAW.MY_API_STAGE) FILE_FORMAT = (TYPE = 'JSON')"
     )
 
     ingest_task >> upload_task >> copy_task

@@ -28,7 +28,7 @@ def upload_to_snowflake_stage(file_path, conn):
     """
     try:
         cursor = conn.cursor()
-        put_query = f"PUT file://{file_path} @MY_API_STAGE AUTO_COMPRESS=TRUE"
+        put_query = f"PUT file://{file_path} @DE_LEARNING.RAW.MY_API_STAGE AUTO_COMPRESS=TRUE"
         cursor.execute(put_query)
         print(f"File {file_path} uploaded to @MY_API_STAGE")
     finally:
