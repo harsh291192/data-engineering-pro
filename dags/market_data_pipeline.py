@@ -40,7 +40,10 @@ with DAG(
     copy_task = SQLExecuteQueryOperator(
         task_id='copy_to_table',
         conn_id='snowflake_default',
-        sql="COPY INTO DE_LEARNING.RAW.RAW_POSTS (json_data) FROM (SELECT $1 FROM @DE_LEARNING.RAW.MY_API_STAGE) FILE_FORMAT = (TYPE = 'JSON')"
+        sql=[
+            "DELETE FROM DE_LEARNING.RAW.RAW_POSTS WHERE TO_DATE(ingested_at) = '{{ ds }}'",
+            "COPY INTO DE_LEARNING.RAW.RAW_POSTS (json_data, ingested_at) FROM (SELECT $1, TO_TIMESTAMP_NTZ('{{ ts }}') FROM @DE_LEARNING.RAW.MY_API_STAGE) FILE_FORMAT = (TYPE = 'JSON')"
+        ]
     )
 
     ingest_task >> upload_task >> copy_task
