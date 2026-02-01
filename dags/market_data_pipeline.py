@@ -68,7 +68,7 @@ with DAG(
 
     dbt_test = BashOperator(
         task_id='dbt_test',
-        bash_command='dbt test --select stg_posts',
+        bash_command='dbt test',
         cwd='/usr/local/airflow/dbt'
     )
 
