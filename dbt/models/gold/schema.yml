@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: user_activity_summary
+    description: "Aggregated user activity showing total posts and average title length."
+    columns:
+      - name: user_id
+        description: "Primary key. Unique identifier for the user."
+        tests:
+          - unique
+          - not_null
+      - name: total_posts
+        description: "Count of posts made by the user."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "total_posts >= 0"
+      - name: avg_title_length
+        description: "Average length of post titles."
