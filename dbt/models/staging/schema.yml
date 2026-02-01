@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_posts
+    description: "Staging model for posts data, parsed from raw JSON."
+    columns:
+      - name: post_id
+        description: "Primary key of the post."
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "ID of the user who made the post."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the post."
+      - name: body
+        description: "Content of the post."
+      - name: ingested_at
+        description: "Timestamp when the raw data was ingested."
