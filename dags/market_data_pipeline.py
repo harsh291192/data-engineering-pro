@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
@@ -59,4 +60,16 @@ with DAG(
         ]
     )
 
-    ingest_task >> validate_task >> upload_task >> copy_task
+    dbt_run = BashOperator(
+        task_id='dbt_run',
+        bash_command='dbt run --select stg_posts',
+        cwd='/usr/local/airflow/dbt'
+    )
+
+    dbt_test = BashOperator(
+        task_id='dbt_test',
+        bash_command='dbt test --select stg_posts',
+        cwd='/usr/local/airflow/dbt'
+    )
+
+    ingest_task >> validate_task >> upload_task >> copy_task >> dbt_run >> dbt_test
