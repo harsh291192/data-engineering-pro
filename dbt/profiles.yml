@@ -6,7 +6,7 @@ market_data:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT', 'RCXRXHR-YH08648') }}"
       user: "{{ env_var('SNOWFLAKE_USER', 'DE_HARSH') }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'DEVELOPER_ROLE') }}"
       database: "{{ env_var('SNOWFLAKE_DATABASE', 'DE_LEARNING') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'COMPUTE_WH') }}"
       schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'DBT_DEV') }}"

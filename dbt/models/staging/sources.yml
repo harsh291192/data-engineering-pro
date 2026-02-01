@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: snowflake_raw
+    database: DE_LEARNING
+    schema: RAW
+    description: "Raw data ingested from external APIs"
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
+      error_after:
+        count: 48
+        period: hour
+    loaded_at_field: INGESTED_AT
+    tables:
+      - name: RAW_POSTS
+        description: "Raw JSON posts data ingested daily"

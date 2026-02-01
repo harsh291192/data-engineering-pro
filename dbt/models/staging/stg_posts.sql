@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ source('snowflake', 'RAW_POSTS') }}
+    select * from {{ source('snowflake_raw', 'RAW_POSTS') }}
 ),
 
 renamed as (
