@@ -7,3 +7,5 @@ google-cloud-storage
 pandas
 apache-airflow-providers-snowflake
 apache-airflow-providers-slack
+dbt-core
+dbt-snowflake

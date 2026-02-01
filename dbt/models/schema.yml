@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: snowflake
+    database: DE_LEARNING
+    schema: RAW
+    tables:
+      - name: RAW_POSTS
