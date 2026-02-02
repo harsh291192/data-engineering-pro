@@ -295,3 +295,429 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m21:20:33.816580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001550B3A84A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001550DB5B5F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001550B212930>]}
 [0m21:20:33.817579 [debug] [MainThread]: Flushing usage events
 [0m21:20:35.253169 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:37:33.595735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12E8D20C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12E8D2BA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12BB8E9C0>]}
+
+
+============================== 23:37:33.606052 | 6295fcea-3c1c-4ad0-8406-717b22d897d8 ==============================
+[0m23:37:33.606052 [info ] [MainThread]: Running with dbt=1.11.2
+[0m23:37:33.607074 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt\\logs'}
+[0m23:37:33.611636 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `materialized` found at `market_data.materialized` in file
+`C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\dbt_project.y
+ml`. Hierarchical config values without a '+' prefix are deprecated in
+dbt_project.yml.
+[0m23:37:33.612649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6295fcea-3c1c-4ad0-8406-717b22d897d8', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12FABDC10>]}
+[0m23:37:34.210450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6295fcea-3c1c-4ad0-8406-717b22d897d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12E9F5FD0>]}
+[0m23:37:34.294281 [debug] [MainThread]: Set downloads directory='C:\Users\harsh\AppData\Local\Temp\dbt-downloads-b72jxp6z'
+[0m23:37:34.294787 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m23:37:35.014090 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m23:37:35.016090 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m23:37:35.798687 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m23:37:35.817726 [info ] [MainThread]: Updating lock file in file path: C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt/package-lock.yml
+[0m23:37:35.838055 [debug] [MainThread]: Set downloads directory='C:\Users\harsh\AppData\Local\Temp\dbt-downloads-7b1nxlf2'
+[0m23:37:35.844329 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m23:37:36.965135 [info ] [MainThread]: Installed from version 1.1.1
+[0m23:37:36.966141 [info ] [MainThread]: Updated version available: 1.3.3
+[0m23:37:36.966141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6295fcea-3c1c-4ad0-8406-717b22d897d8', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C13001E120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1300898B0>]}
+[0m23:37:36.967137 [info ] [MainThread]: 
+[0m23:37:36.968151 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m23:37:36.970153 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m23:37:36.974655 [debug] [MainThread]: Command `dbt deps` succeeded at 23:37:36.974145 after 3.60 seconds
+[0m23:37:36.975175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12DE95940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12E247920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C12BBE5880>]}
+[0m23:37:36.975175 [debug] [MainThread]: Flushing usage events
+[0m23:37:38.556549 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:38:48.126230 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C60BD53CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C60BC8DD60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C60BC8CA40>]}
+
+
+============================== 23:38:48.131365 | 1153dd70-951a-4337-8d95-beb40f026604 ==============================
+[0m23:38:48.131365 [info ] [MainThread]: Running with dbt=1.11.2
+[0m23:38:48.132874 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt docs generate', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt\\logs'}
+[0m23:38:50.250284 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m23:38:50.251285 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m23:38:50.252283 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m23:38:50.345124 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `materialized` found at `market_data.materialized` in file
+`C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\dbt_project.y
+ml`. Hierarchical config values without a '+' prefix are deprecated in
+dbt_project.yml.
+[0m23:38:50.346105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6136EA6F0>]}
+[0m23:38:50.645677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613244C20>]}
+[0m23:38:50.723719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C611061AF0>]}
+[0m23:38:50.733530 [info ] [MainThread]: Registered adapter: snowflake=1.11.1
+[0m23:38:51.346634 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m23:38:51.349220 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m23:38:51.351241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613847590>]}
+[0m23:38:51.364784 [warn ] [MainThread]: [[33mWARNING[0m][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0]`.
+[0m23:38:51.365291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C61381F140>]}
+[0m23:38:53.427089 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.expression_is_true` defined on
+'user_activity_summary' in package 'market_data' (models\gold\schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m23:38:53.428086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613E80410>]}
+[0m23:38:53.753822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613D98E90>]}
+[0m23:38:53.795519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613FC3BF0>]}
+[0m23:38:53.796520 [info ] [MainThread]: Found 2 models, 7 data tests, 1 source, 636 macros
+[0m23:38:53.796520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C613FD07D0>]}
+[0m23:38:53.800071 [info ] [MainThread]: 
+[0m23:38:53.800071 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m23:38:53.801060 [info ] [MainThread]: 
+[0m23:38:53.802068 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:38:53.803727 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DE_LEARNING_DBT_DEV'
+[0m23:38:53.814504 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DE_LEARNING_DBT_DEV_gold'
+[0m23:38:54.310528 [debug] [ThreadPool]: Using snowflake connection "list_DE_LEARNING_DBT_DEV"
+[0m23:38:54.311037 [debug] [ThreadPool]: Using snowflake connection "list_DE_LEARNING_DBT_DEV_gold"
+[0m23:38:54.312056 [debug] [ThreadPool]: On list_DE_LEARNING_DBT_DEV: show objects in DE_LEARNING.DBT_DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "market_data", "target_name": "dev", "connection_name": "list_DE_LEARNING_DBT_DEV"} */;
+[0m23:38:54.312056 [debug] [ThreadPool]: On list_DE_LEARNING_DBT_DEV_gold: show objects in DE_LEARNING.DBT_DEV_gold
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "market_data", "target_name": "dev", "connection_name": "list_DE_LEARNING_DBT_DEV_gold"} */;
+[0m23:38:54.313066 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:38:54.313066 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:38:55.511648 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c22060-3202-4c4e-0012-cee6000621ca
+[0m23:38:55.513125 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m23:38:55.513125 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m23:38:55.514136 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m23:38:55.548621 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c22060-3202-4d62-0012-cee600067006
+[0m23:38:55.548621 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m23:38:55.549623 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m23:38:55.549623 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m23:38:55.550621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1153dd70-951a-4337-8d95-beb40f026604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C614001250>]}
+[0m23:38:55.561694 [debug] [Thread-2 (]: Began running node model.market_data.stg_posts
+[0m23:38:55.562700 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.market_data.stg_posts'
+[0m23:38:55.562700 [debug] [Thread-2 (]: Began compiling node model.market_data.stg_posts
+[0m23:38:55.574088 [debug] [Thread-2 (]: Writing injected SQL for node "model.market_data.stg_posts"
+[0m23:38:55.579136 [debug] [Thread-2 (]: Began executing node model.market_data.stg_posts
+[0m23:38:55.580151 [debug] [Thread-2 (]: Finished running node model.market_data.stg_posts
+[0m23:38:55.581150 [debug] [Thread-4 (]: Began running node model.market_data.user_activity_summary
+[0m23:38:55.582658 [debug] [Thread-5 (]: Began running node test.market_data.not_null_stg_posts_post_id.cd5975e2d9
+[0m23:38:55.583667 [debug] [Thread-3 (]: Began running node test.market_data.not_null_stg_posts_user_id.66d77b29fa
+[0m23:38:55.583667 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.market_data.user_activity_summary'
+[0m23:38:55.584668 [debug] [Thread-2 (]: Began running node test.market_data.unique_stg_posts_post_id.ec6994c39f
+[0m23:38:55.585664 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.market_data.not_null_stg_posts_post_id.cd5975e2d9'
+[0m23:38:55.587295 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.market_data.not_null_stg_posts_user_id.66d77b29fa'
+[0m23:38:55.587810 [debug] [Thread-4 (]: Began compiling node model.market_data.user_activity_summary
+[0m23:38:55.587810 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.market_data.stg_posts, now test.market_data.unique_stg_posts_post_id.ec6994c39f)
+[0m23:38:55.589328 [debug] [Thread-5 (]: Began compiling node test.market_data.not_null_stg_posts_post_id.cd5975e2d9
+[0m23:38:55.589328 [debug] [Thread-3 (]: Began compiling node test.market_data.not_null_stg_posts_user_id.66d77b29fa
+[0m23:38:55.594338 [debug] [Thread-4 (]: Writing injected SQL for node "model.market_data.user_activity_summary"
+[0m23:38:55.595361 [debug] [Thread-2 (]: Began compiling node test.market_data.unique_stg_posts_post_id.ec6994c39f
+[0m23:38:55.607435 [debug] [Thread-5 (]: Writing injected SQL for node "test.market_data.not_null_stg_posts_post_id.cd5975e2d9"
+[0m23:38:55.612505 [debug] [Thread-3 (]: Writing injected SQL for node "test.market_data.not_null_stg_posts_user_id.66d77b29fa"
+[0m23:38:55.623023 [debug] [Thread-2 (]: Writing injected SQL for node "test.market_data.unique_stg_posts_post_id.ec6994c39f"
+[0m23:38:55.626026 [debug] [Thread-4 (]: Began executing node model.market_data.user_activity_summary
+[0m23:38:55.627016 [debug] [Thread-3 (]: Began executing node test.market_data.not_null_stg_posts_user_id.66d77b29fa
+[0m23:38:55.628395 [debug] [Thread-4 (]: Finished running node model.market_data.user_activity_summary
+[0m23:38:55.629435 [debug] [Thread-3 (]: Finished running node test.market_data.not_null_stg_posts_user_id.66d77b29fa
+[0m23:38:55.630453 [debug] [Thread-5 (]: Began executing node test.market_data.not_null_stg_posts_post_id.cd5975e2d9
+[0m23:38:55.631450 [debug] [Thread-2 (]: Began executing node test.market_data.unique_stg_posts_post_id.ec6994c39f
+[0m23:38:55.632453 [debug] [Thread-5 (]: Finished running node test.market_data.not_null_stg_posts_post_id.cd5975e2d9
+[0m23:38:55.633531 [debug] [Thread-4 (]: Began running node test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba
+[0m23:38:55.635177 [debug] [Thread-3 (]: Began running node test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31
+[0m23:38:55.636177 [debug] [Thread-2 (]: Finished running node test.market_data.unique_stg_posts_post_id.ec6994c39f
+[0m23:38:55.636177 [debug] [Thread-5 (]: Began running node test.market_data.not_null_user_activity_summary_user_id.841d8e6de6
+[0m23:38:55.637175 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.market_data.user_activity_summary, now test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba)
+[0m23:38:55.638169 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.market_data.not_null_stg_posts_user_id.66d77b29fa, now test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31)
+[0m23:38:55.639689 [debug] [Thread-2 (]: Began running node test.market_data.unique_user_activity_summary_user_id.0806046bb3
+[0m23:38:55.640706 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.market_data.not_null_stg_posts_post_id.cd5975e2d9, now test.market_data.not_null_user_activity_summary_user_id.841d8e6de6)
+[0m23:38:55.641710 [debug] [Thread-4 (]: Began compiling node test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba
+[0m23:38:55.641710 [debug] [Thread-3 (]: Began compiling node test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31
+[0m23:38:55.642844 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.market_data.unique_stg_posts_post_id.ec6994c39f, now test.market_data.unique_user_activity_summary_user_id.0806046bb3)
+[0m23:38:55.643835 [debug] [Thread-5 (]: Began compiling node test.market_data.not_null_user_activity_summary_user_id.841d8e6de6
+[0m23:38:55.651005 [debug] [Thread-4 (]: Writing injected SQL for node "test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba"
+[0m23:38:55.657073 [debug] [Thread-3 (]: Writing injected SQL for node "test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31"
+[0m23:38:55.658069 [debug] [Thread-2 (]: Began compiling node test.market_data.unique_user_activity_summary_user_id.0806046bb3
+[0m23:38:55.664215 [debug] [Thread-5 (]: Writing injected SQL for node "test.market_data.not_null_user_activity_summary_user_id.841d8e6de6"
+[0m23:38:55.671258 [debug] [Thread-2 (]: Writing injected SQL for node "test.market_data.unique_user_activity_summary_user_id.0806046bb3"
+[0m23:38:55.674788 [debug] [Thread-4 (]: Began executing node test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba
+[0m23:38:55.675803 [debug] [Thread-4 (]: Finished running node test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba
+[0m23:38:55.676800 [debug] [Thread-2 (]: Began executing node test.market_data.unique_user_activity_summary_user_id.0806046bb3
+[0m23:38:55.678800 [debug] [Thread-2 (]: Finished running node test.market_data.unique_user_activity_summary_user_id.0806046bb3
+[0m23:38:55.679309 [debug] [Thread-3 (]: Began executing node test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31
+[0m23:38:55.679309 [debug] [Thread-5 (]: Began executing node test.market_data.not_null_user_activity_summary_user_id.841d8e6de6
+[0m23:38:55.680920 [debug] [Thread-3 (]: Finished running node test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31
+[0m23:38:55.682438 [debug] [Thread-5 (]: Finished running node test.market_data.not_null_user_activity_summary_user_id.841d8e6de6
+[0m23:38:55.683449 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:38:55.684445 [debug] [MainThread]: Connection 'list_DE_LEARNING_DBT_DEV' was left open.
+[0m23:38:55.684445 [debug] [MainThread]: On list_DE_LEARNING_DBT_DEV: Close
+[0m23:38:55.839341 [debug] [MainThread]: Connection 'list_DE_LEARNING_DBT_DEV_gold' was left open.
+[0m23:38:55.840340 [debug] [MainThread]: On list_DE_LEARNING_DBT_DEV_gold: Close
+[0m23:38:56.007602 [debug] [MainThread]: Connection 'test.market_data.unique_user_activity_summary_user_id.0806046bb3' was properly closed.
+[0m23:38:56.007602 [debug] [MainThread]: Connection 'test.market_data.dbt_utils_expression_is_true_user_activity_summary_total_posts__total_posts_0.74411826ba' was properly closed.
+[0m23:38:56.008656 [debug] [MainThread]: Connection 'test.market_data.not_null_user_activity_summary_user_id.841d8e6de6' was properly closed.
+[0m23:38:56.008656 [debug] [MainThread]: Connection 'test.market_data.not_null_user_activity_summary_total_posts.0df7b2bd31' was properly closed.
+[0m23:38:56.010614 [debug] [MainThread]: Command end result
+[0m23:38:56.131578 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\manifest.json
+[0m23:38:56.136437 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\semantic_manifest.json
+[0m23:38:56.146570 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\run_results.json
+[0m23:38:56.154787 [debug] [MainThread]: Acquiring new snowflake connection 'generate_catalog'
+[0m23:38:56.155348 [info ] [MainThread]: Building catalog
+[0m23:38:56.168838 [debug] [ThreadPool]: Acquiring new snowflake connection 'DE_LEARNING.information_schema'
+[0m23:38:56.191591 [debug] [ThreadPool]: Using snowflake connection "DE_LEARNING.information_schema"
+[0m23:38:56.192193 [debug] [ThreadPool]: On DE_LEARNING.information_schema: with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from DE_LEARNING.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_DEV_gold' and upper("table_schema") = upper('DBT_DEV_gold')
+
+                    and 
+    "table_name" ilike 'user_activity_summary' and upper("table_name") = upper('user_activity_summary')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_DEV' and upper("table_schema") = upper('DBT_DEV')
+
+                    and 
+    "table_name" ilike 'stg_posts' and upper("table_name") = upper('stg_posts')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'RAW_POSTS' and upper("table_name") = upper('RAW_POSTS')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from DE_LEARNING.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_DEV_gold' and upper("table_schema") = upper('DBT_DEV_gold')
+
+                    and 
+    "table_name" ilike 'user_activity_summary' and upper("table_name") = upper('user_activity_summary')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_DEV' and upper("table_schema") = upper('DBT_DEV')
+
+                    and 
+    "table_name" ilike 'stg_posts' and upper("table_name") = upper('stg_posts')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'RAW_POSTS' and upper("table_name") = upper('RAW_POSTS')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "market_data", "target_name": "dev", "connection_name": "DE_LEARNING.information_schema"} */
+[0m23:38:56.193277 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:38:59.132160 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 2.939 seconds
+[0m23:38:59.153568 [debug] [MainThread]: Wrote artifact CatalogArtifact to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\catalog.json
+[0m23:38:59.284648 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\manifest.json
+[0m23:38:59.288668 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\semantic_manifest.json
+[0m23:38:59.288668 [info ] [MainThread]: Catalog written to C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\target\catalog.json
+[0m23:38:59.290688 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+- PropertyMovedToConfigDeprecation: 2 occurrences
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m23:38:59.292232 [debug] [MainThread]: Command `dbt docs generate` succeeded at 23:38:59.291676 after 11.37 seconds
+[0m23:38:59.292232 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m23:38:59.292232 [debug] [MainThread]: Connection 'DE_LEARNING.information_schema' was left open.
+[0m23:38:59.293251 [debug] [MainThread]: On DE_LEARNING.information_schema: Close
+[0m23:38:59.474931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6157E3980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6157E3E60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6157E37D0>]}
+[0m23:38:59.476449 [debug] [MainThread]: Flushing usage events
+[0m23:39:00.903145 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:39:11.878729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264531327B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264528FA930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264528F8E60>]}
+
+
+============================== 23:39:11.883816 | db7ff9fb-d607-428b-a660-7d6937af3f33 ==============================
+[0m23:39:11.883816 [info ] [MainThread]: Running with dbt=1.11.2
+[0m23:39:11.885326 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt', 'use_colors': 'True', 'invocation_command': 'dbt docs serve', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt\\logs'}
+[0m23:39:13.213248 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m23:39:13.213248 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m23:39:13.214248 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m23:39:13.301147 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `materialized` found at `market_data.materialized` in file
+`C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\dbt_project.y
+ml`. Hierarchical config values without a '+' prefix are deprecated in
+dbt_project.yml.
+[0m23:39:13.302147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'db7ff9fb-d607-428b-a660-7d6937af3f33', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002645823F620>]}
+[0m23:39:13.590272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'db7ff9fb-d607-428b-a660-7d6937af3f33', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002645886B6B0>]}
+[0m23:39:13.668223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'db7ff9fb-d607-428b-a660-7d6937af3f33', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026453C252E0>]}
+[0m23:39:13.866057 [error] [MainThread]: Encountered an error:
+[WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+[0m23:39:13.874202 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\main.py", line 307, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\task\docs\serve.py", line 24, in run
+    with socketserver.TCPServer((host, port), SimpleHTTPRequestHandler) as httpd:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "C:\Users\harsh\anaconda3\Lib\socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+[0m23:39:13.876204 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m23:39:13.879288 [debug] [MainThread]: Command `dbt docs serve` failed at 23:39:13.879288 after 2.19 seconds
+[0m23:39:13.879840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264531327B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026458485640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264586BD040>]}
+[0m23:39:13.879840 [debug] [MainThread]: Flushing usage events
+[0m23:39:15.336179 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:40:18.123882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161CC583F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161CECEB500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161CECEABA0>]}
+
+
+============================== 23:40:18.130415 | cd182e0a-741e-44c5-ae38-eb39a36e2def ==============================
+[0m23:40:18.130415 [info ] [MainThread]: Running with dbt=1.11.2
+[0m23:40:18.131420 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt docs serve --port 8001', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\harsh\\OneDrive\\Documents\\GitHub\\data-engineering-pro\\dbt\\logs'}
+[0m23:40:19.476363 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m23:40:19.476363 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m23:40:19.477401 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m23:40:19.570574 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `materialized` found at `market_data.materialized` in file
+`C:\Users\harsh\OneDrive\Documents\GitHub\data-engineering-pro\dbt\dbt_project.y
+ml`. Hierarchical config values without a '+' prefix are deprecated in
+dbt_project.yml.
+[0m23:40:19.571579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'cd182e0a-741e-44c5-ae38-eb39a36e2def', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161D3B266C0>]}
+[0m23:40:19.973885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cd182e0a-741e-44c5-ae38-eb39a36e2def', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161D3FC36B0>]}
+[0m23:40:20.057224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cd182e0a-741e-44c5-ae38-eb39a36e2def', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161D1C2AED0>]}
+[0m23:41:32.994577 [error] [MainThread]: Encountered an error:
+
+[0m23:41:33.005725 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\cli\main.py", line 307, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+  File "C:\Users\harsh\anaconda3\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\selectors.py", line 323, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\anaconda3\Lib\selectors.py", line 314, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m23:41:33.006745 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m23:41:33.008751 [debug] [MainThread]: Command `dbt docs serve` failed at 23:41:33.008751 after 75.09 seconds
+[0m23:41:33.009743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161CC583F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161D2535DC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161D400BDA0>]}
+[0m23:41:33.009743 [debug] [MainThread]: Flushing usage events
+[0m23:41:34.537641 [debug] [MainThread]: An error was encountered while trying to flush usage events
