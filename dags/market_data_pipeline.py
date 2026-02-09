@@ -56,13 +56,19 @@ with DAG(
         conn_id='snowflake_default',
         sql=[
             "DELETE FROM DE_LEARNING.RAW.RAW_POSTS WHERE TO_DATE(ingested_at) = '{{ ds }}'",
-            "COPY INTO DE_LEARNING.RAW.RAW_POSTS (json_data, ingested_at) FROM (SELECT $1, TO_TIMESTAMP_NTZ('{{ ts }}') FROM @DE_LEARNING.RAW.MY_API_STAGE) FILE_FORMAT = (TYPE = 'JSON')"
+            "COPY INTO DE_LEARNING.RAW.RAW_POSTS (json_data, ingested_at) FROM (SELECT $1, TO_TIMESTAMP_NTZ('{{ ts }}') FROM @DE_LEARNING.RAW.MY_API_STAGE) FILE_FORMAT = (TYPE = 'JSON') FORCE = TRUE"
         ]
+    )
+
+    dbt_freshness = BashOperator(
+        task_id='dbt_freshness',
+        bash_command='dbt source freshness',
+        cwd='/usr/local/airflow/dbt'
     )
 
     dbt_run = BashOperator(
         task_id='dbt_run',
-        bash_command='dbt run',
+        bash_command='dbt deps && dbt run --no-partial-parse',
         cwd='/usr/local/airflow/dbt'
     )
 
@@ -72,4 +78,4 @@ with DAG(
         cwd='/usr/local/airflow/dbt'
     )
 
-    ingest_task >> validate_task >> upload_task >> copy_task >> dbt_run >> dbt_test
+    ingest_task >> validate_task >> upload_task >> copy_task >> dbt_freshness >> dbt_run >> dbt_test
